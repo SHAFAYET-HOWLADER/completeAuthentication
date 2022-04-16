@@ -1,0 +1,22 @@
+
+.experts{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+}
+/*--------->make responsive using media query<---------*/
+@media (min-width: 901px) and (max-width:1200px ){
+    .experts{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (min-width: 577px) and (max-width:900px ){
+    .experts{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 576px){
+    .experts{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

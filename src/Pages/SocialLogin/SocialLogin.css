@@ -1,0 +1,9 @@
+
+.signIn_with_google {
+    background-color: #d1d1d1;
+    padding: 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+}
