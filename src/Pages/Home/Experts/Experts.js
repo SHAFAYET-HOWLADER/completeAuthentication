@@ -11,6 +11,7 @@ import experts7 from '../../../experts/expert_one (7).jpg'
 import experts8 from '../../../experts/expert_one (8).jpg'
 import experts9 from '../../../experts/expert_one (9).jpg'
 import experts10 from '../../../experts/expert_one (10).jpg'
+import PageTitle from '../../Shared/PageTitle/PageTitle';
 
 const experts = [
     {
@@ -95,6 +96,7 @@ const experts = [
 const Experts = () => {
     return (
         <div>
+           <PageTitle title="Experts"></PageTitle>
             <h2 className='text-success text-center py-3'>Our experts</h2>
             <div className='experts'>
                 {

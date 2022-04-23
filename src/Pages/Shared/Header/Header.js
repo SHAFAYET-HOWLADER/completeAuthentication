@@ -13,7 +13,7 @@ const Header = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" sticky='top' variant="dark">
             <Container>
-                <CustomLink className='px-4 text-white fs-4' to="/home">
+                <CustomLink  to="/home">
                     <img
                         style={{ height: "30px", width: '30px' }}
                         src={logo}
@@ -26,6 +26,13 @@ const Header = () => {
                         <CustomLink className='px-4 text-white fs-4' to="/experts">Experts</CustomLink>
                     </Nav>
                     <Nav>
+                        {
+                            user &&
+                            <>
+                               <CustomLink className='px-4 text-white fs-4' to='/addService'>Add</CustomLink>
+                               <CustomLink className='px-4 text-white fs-4' to='/manage'>Manage</CustomLink>
+                            </>
+                        }
                        {
                            user ? <button onClick={logOut}>Sign Out</button>
                             :<CustomLink className='px-4 text-white fs-4'  to='/login'>Login</CustomLink>

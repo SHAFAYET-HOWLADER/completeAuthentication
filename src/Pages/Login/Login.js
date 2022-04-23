@@ -7,6 +7,7 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loading from '../Shared/Loading/Loading';
+import PageTitle from '../Shared/PageTitle/PageTitle';
 
 
 const Login = () => {
@@ -14,7 +15,7 @@ const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const location = useLocation();
-    const form = location.state?.from?.pathname || '/';
+    const from = location.state?.from?.pathname || '/';
     const [
         signInWithEmailAndPassword,
         user1,
@@ -25,7 +26,7 @@ const Login = () => {
         auth
     );
     if (user1) {
-        navigate(form, {replace: true})
+        navigate(from, { replace: true })
     }
     let errorHandle;
     if (error) {
@@ -44,18 +45,19 @@ const Login = () => {
     const navigateToRegister = event => {
         navigate('/register')
     }
-    const resetPass = async ()=>{
-          const email = emailRef.current.value;
-          if(email){
+    const resetPass = async () => {
+        const email = emailRef.current.value;
+        if (email) {
             await sendPasswordResetEmail(email);
             toast('Sent email');
-          }
-          else{
+        }
+        else {
             toast('Please input email');
-          }
+        }
     }
     return (
         <div className='login container w-50 py-5'>
+          <PageTitle title="Login"></PageTitle>
             <h2>Please login here</h2>
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
